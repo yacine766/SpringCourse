@@ -7,12 +7,11 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 public class Example {
     public static void main(String[]args){
 
-        var context = new AnnotationConfigApplicationContext(ProjectConfig.class);
-        Vehicle veh = context.getBean("audiVehicle", Vehicle.class);
-        System.out.println("vehicle name from spring context is:" +veh.getName() );
-        veh = context.getBean("mercedesVehicle", Vehicle.class);
-        System.out.println("vehicle name from spring context is:" +veh.getName() );
-
+      var context = new AnnotationConfigApplicationContext(ProjectConfig.class);
+      Vehicle vehicle = context.getBean(Vehicle.class);
+      vehicle.setName("mercedes");
+      System.out.println("component vehicle name from spring context is "+vehicle.getName());
+      vehicle.printHello();
 //test
 
     }
